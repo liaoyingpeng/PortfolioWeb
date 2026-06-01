@@ -72,39 +72,51 @@ export const education = {
 };
 
 export const services = [
-  "品牌形象網站",
-  "個人作品集",
-  "互動展示頁",
-  "基礎前端開發"
+  {
+    title: "Web Design",
+    description: "品牌網站與數位體驗設計"
+  },
+  {
+    title: "UI / UX Design",
+    description: "使用者研究、介面設計與原型規劃"
+  },
+  {
+    title: "Interactive Experience",
+    description: "Unity、TouchDesigner 與互動媒體創作"
+  },
+  {
+    title: "Frontend Development",
+    description: "HTML、CSS、JavaScript、PHP"
+  }
 ];
 
 export const highlights = [
   {
     title: "資訊傳播學系排球隊隊長",
     meta: "資訊傳播學系系排",
-    date: "2024/09 - 2025/06",
+    date: "2024 - 2025",
     description:
       "負責隊伍管理與訓練協調，帶領團隊參與比賽，累積溝通協作與領導經驗。"
   },
   {
     title: "書卷獎・系排第二名",
     meta: "Academic Award / Team Competition",
-    date: "2025/09",
+    date: "2025",
     description:
       "學業成績名列系上前段，獲頒書卷獎肯定；同時參與系排競賽並獲得第二名。"
   },
   {
     title: "暑期海外交流",
     meta: "加拿大卡加利大學",
-    date: "2025/07",
+    date: "2025",
     description:
-      "參與暑期海外遊學，拓展國際視野，並提升英語溝通與跨文化適應能力。"
+      "赴加拿大卡加利大學進行暑期交流，透過跨文化學習與團隊合作，提升溝通能力、國際視野與自主學習能力。"
   },
   {
     title: "育秀盃創意競賽｜工業設計類",
     meta: "使用者介面設計作品《陪伴雲》",
-    date: "入圍複賽",
+    date: "2025",
     description:
-      "以智慧醫療 App《陪伴雲》參賽，提出 AI 病患分級與遠端診療概念，作品入圍複賽。"
+      "負責使用者研究、介面規劃與原型設計，以高齡照護為主題提出智慧醫療服務概念，作品入圍育秀盃複賽。"
   }
 ];

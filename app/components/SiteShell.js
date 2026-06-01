@@ -8,17 +8,19 @@ const navItems = [
 
 export default function SiteShell({ children }) {
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
+    <main className="min-h-screen bg-[#15151b] text-stone-100">
       <div className="relative isolate min-h-screen overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(245,245,244,0.14),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,162,158,0.11),_transparent_28%),linear-gradient(rgba(245,245,244,0.025)_1px,_transparent_1px),linear-gradient(90deg,_rgba(245,245,244,0.025)_1px,_transparent_1px)] bg-[size:auto,auto,72px_72px,72px_72px]" />
-        <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-6 sm:px-10 lg:px-16">
-          <header className="sticky top-0 z-20 -mx-6 flex flex-wrap items-center justify-between gap-5 border-b border-stone-800/80 bg-stone-950/75 px-6 py-5 backdrop-blur-xl sm:-mx-10 sm:px-10 lg:-mx-16 lg:px-16">
-            <Link href="/" className="font-[family-name:var(--font-display)] text-base uppercase tracking-[0.42em] transition hover:text-stone-300">
+        <div className="site-grid pointer-events-none absolute inset-0 -z-20" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[44rem] bg-[radial-gradient(circle_at_50%_-10%,_rgba(255,255,255,0.14),_transparent_54%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,_rgba(21,21,27,0)_0%,_rgba(21,21,27,0.28)_44%,_#15151b_100%)]" />
+        <div className="mx-auto flex min-h-screen w-full max-w-[92rem] flex-col px-5 py-5 sm:px-8 lg:px-12">
+          <header className="sticky top-5 z-20 mx-auto flex w-full max-w-5xl flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-white/10 bg-[#1f1f27]/82 px-2 py-3 shadow-[0_18px_55px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:flex-nowrap sm:justify-between sm:gap-4 sm:rounded-full sm:px-5">
+            <Link href="/" className="flex min-h-9 items-center rounded-full px-2 font-[family-name:var(--font-display)] text-base font-black uppercase tracking-[0.2em] text-stone-100 sm:min-h-11 sm:px-4 sm:text-xl sm:tracking-[0.24em]">
               LYP
             </Link>
-            <nav className="flex gap-4 text-sm text-stone-300 sm:gap-8">
+            <nav className="flex min-h-10 items-center gap-1 rounded-full bg-black/18 p-1 text-[0.68rem] text-stone-300 sm:min-h-11 sm:gap-2 sm:text-sm">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="uppercase tracking-[0.18em] transition hover:-translate-y-0.5 hover:text-white">
+                <Link key={item.href} href={item.href} className="flex min-h-8 items-center rounded-full px-2 uppercase tracking-[0.1em] sm:min-h-9 sm:px-4 sm:tracking-[0.12em]">
                   {item.label}
                 </Link>
               ))}

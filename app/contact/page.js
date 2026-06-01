@@ -16,8 +16,8 @@ export default function ContactPage() {
       />
 
       <section className="grid gap-14 py-20 lg:grid-cols-[1fr_0.9fr] lg:py-28">
-        <div className="border border-stone-800/80 bg-white/[0.035] p-8 shadow-2xl shadow-black/20 backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.32em] text-stone-500">Availability</p>
+        <div className="border border-white/10 bg-white/[0.035] p-8 shadow-2xl shadow-black/25">
+          <p className="text-xs uppercase tracking-[0.32em] text-stone-300">Availability</p>
           <p className="mt-6 max-w-lg font-[family-name:var(--font-display)] text-4xl leading-tight">
             Open to compact projects with a clear visual direction and thoughtful pacing.
           </p>
@@ -28,11 +28,11 @@ export default function ContactPage() {
             <a
               key={contact.label}
               href={contact.href}
-              className="flex items-center justify-between gap-6 border-b border-stone-800/80 py-6 text-sm transition hover:-translate-y-0.5 hover:border-stone-500 hover:text-white"
+              className="flex items-center justify-between gap-6 border-b border-white/10 py-6 text-sm transition hover:-translate-y-0.5 hover:border-black hover:text-white"
               target={contact.href.startsWith("http") ? "_blank" : undefined}
               rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
             >
-              <span className="uppercase tracking-[0.28em] text-stone-500">{contact.label}</span>
+              <span className="uppercase tracking-[0.28em] text-stone-300">{contact.label}</span>
               <span className="text-right text-base">{contact.value}</span>
             </a>
           ))}

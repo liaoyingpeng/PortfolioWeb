@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #0c0a09;
-  --foreground: #f5f5f4;
-  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
-  --font-body: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+  --background: #15151b;
+  --foreground: #f4f0ea;
+  --ink-muted: #a8a29e;
+  --line-soft: rgba(245, 245, 240, 0.12);
+  --paper-soft: #1f1f27;
+  --font-display: "Arial Rounded MT Bold", "Avenir Next", "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: var(--font-display);
 }
 
 * {
@@ -22,8 +25,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+p,
+li {
+  font-family: var(--font-display);
+  font-weight: 400;
 }
 
 a {
@@ -32,13 +42,50 @@ a {
 }
 
 ::selection {
-  background: rgba(245, 245, 244, 0.16);
+  background: rgba(245, 245, 240, 0.18);
+}
+
+.site-grid {
+  background-color: #15151b;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 48% 0%, rgba(255, 255, 255, 0.1), transparent 38%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+}
+
+.hero-title-3d {
+  color: #f4f0ea;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.34),
+    0 9px 0 rgba(0, 0, 0, 0.22),
+    0 30px 80px rgba(0, 0, 0, 0.58);
+}
+
+.hero-title-3d span {
+  display: block;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f0ea 36%, #7f7b76 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mockup-scene {
+  background:
+    radial-gradient(circle at 24% 18%, rgba(255, 255, 255, 0.18), transparent 20%),
+    radial-gradient(circle at 76% 72%, rgba(255, 255, 255, 0.1), transparent 26%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(31, 31, 39, 0.35) 44%, rgba(0, 0, 0, 0.24));
+}
+
+.about-title-font {
+  font-family: "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", "Arial Rounded MT Bold", "Avenir Next", "Helvetica Neue", sans-serif;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
   }
 
   to {
@@ -47,10 +94,63 @@ a {
   }
 }
 
+@keyframes slow-drift {
+  from {
+    transform: translate3d(-1.5%, 0, 0) rotate(-1deg);
+  }
+
+  to {
+    transform: translate3d(1.5%, -1%, 0) rotate(1deg);
+  }
+}
+
 .reveal {
-  animation: fade-up 700ms ease-out both;
+  animation: fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .reveal-delay {
   animation-delay: 120ms;
+}
+
+.reveal-delay-long {
+  animation-delay: 240ms;
+}
+
+.world-drift {
+  animation: slow-drift 8s ease-in-out infinite alternate;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation: fade-up both cubic-bezier(0.22, 1, 0.36, 1);
+    animation-timeline: view();
+    animation-range: entry 8% cover 28%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
 }

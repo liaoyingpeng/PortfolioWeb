@@ -183,7 +183,7 @@ export default async function ProjectDetailPage({ params }) {
 
   return (
     <SiteShell>
-      <section className="reveal grid gap-14 border-b border-stone-800/80 py-20 lg:grid-cols-[0.6fr_1.4fr] lg:py-28">
+      <section className="reveal grid gap-14 border-b border-white/10 py-20 lg:grid-cols-[0.6fr_1.4fr] lg:py-28">
         <div className="space-y-8">
           <Link href="/work" className="text-sm uppercase tracking-[0.28em] text-stone-400 transition hover:-translate-x-1 hover:text-white">
             Back to project
@@ -194,7 +194,7 @@ export default async function ProjectDetailPage({ params }) {
         </div>
 
         <div className="space-y-8">
-          <p className="text-xs uppercase tracking-[0.36em] text-stone-500">{project.category}</p>
+          <p className="text-xs uppercase tracking-[0.36em] text-stone-300">{project.category}</p>
           <h1 className={`max-w-4xl font-[family-name:var(--font-display)] text-5xl leading-tight sm:text-7xl ${
             detailContent ? "tracking-[0.08em]" : ""
           }`}>
@@ -206,30 +206,30 @@ export default async function ProjectDetailPage({ params }) {
         </div>
       </section>
 
-      <section className="reveal reveal-delay border-b border-stone-800/80 py-20 lg:py-28">
+      <section className="reveal reveal-delay border-b border-white/10 py-20 lg:py-28">
         <Mockup imageUrl={project.image_url} title={project.title} />
       </section>
 
-      <section className="grid gap-12 border-b border-stone-800/80 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:py-24">
+      <section className="grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:py-24">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.38em] text-stone-500">Project Info</p>
+          <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Project Info</p>
           <p className="font-[family-name:var(--font-display)] text-4xl">{project.category}</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="border border-stone-800/80 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Title</p>
+          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
+            <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Title</p>
             <p className="mt-3 text-stone-100">{project.title}</p>
           </div>
-          <div className="border border-stone-800/80 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Category</p>
+          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
+            <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Category</p>
             <p className="mt-3 text-stone-100">{project.category}</p>
           </div>
-          <div className="border border-stone-800/80 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur sm:col-span-2">
-            <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Technology</p>
+          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur sm:col-span-2">
+            <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Technology</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.tech_stack.map((item) => (
-                <span key={item} className="border border-stone-700/80 bg-stone-950/40 px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                <span key={item} className="border border-white/20 bg-black/20 px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-300">
                   {item}
                 </span>
               ))}
@@ -238,20 +238,20 @@ export default async function ProjectDetailPage({ params }) {
           {project.demo_url ? (
             <a
               href={project.demo_url}
-              className="border border-stone-800/80 bg-white/[0.035] p-6 shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:border-stone-500 sm:col-span-2"
+              className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:border-white/45 sm:col-span-2"
               target="_blank"
               rel="noreferrer"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Demo</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Demo</p>
               <p className="mt-3 break-all text-stone-100">{project.demo_url}</p>
             </a>
           ) : null}
         </div>
       </section>
 
-      <section className="grid gap-12 border-b border-stone-800/80 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:py-24">
+      <section className="grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:py-24">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.38em] text-stone-500">
+          <p className="text-xs uppercase tracking-[0.38em] text-stone-300">
             {detailContent ? "Project Intro" : "Description"}
           </p>
           {detailContent ? (
@@ -268,10 +268,10 @@ export default async function ProjectDetailPage({ params }) {
       </section>
 
       {detailContent ? (
-        <section className="border-b border-stone-800/80 py-20 lg:py-24">
+        <section className="border-b border-white/10 py-20 lg:py-24">
           <div className="mb-12 grid gap-6 lg:grid-cols-[0.7fr_1.3fr]">
             <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.38em] text-stone-500">Design</p>
+              <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Design</p>
               <h2 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-stone-100">
                 Design Highlights
               </h2>
@@ -285,7 +285,7 @@ export default async function ProjectDetailPage({ params }) {
             {detailContent.highlights.map((highlight, index) => (
               <article
                 key={highlight.title}
-                className="group border border-stone-800/80 bg-white/[0.035] p-7 shadow-xl shadow-black/15 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-stone-600 hover:bg-white/[0.055] hover:shadow-black/35"
+                className="group border border-white/10 bg-white/[0.035] p-7 shadow-xl shadow-black/15 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.055] hover:shadow-black/35"
               >
                 <p className="font-[family-name:var(--font-display)] text-4xl text-stone-700">
                   {formatViewNumber(index)}
@@ -303,10 +303,10 @@ export default async function ProjectDetailPage({ params }) {
       ) : null}
 
       {project.gallery_urls.length > 0 ? (
-        <section className="border-b border-stone-800/80 py-20 lg:py-28">
+        <section className="border-b border-white/10 py-20 lg:py-28">
           <div className="mb-14 grid gap-6 lg:grid-cols-[0.7fr_1.3fr]">
             <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.38em] text-stone-500">Gallery</p>
+              <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Gallery</p>
               <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl">Mockup views</h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-stone-400">
@@ -318,21 +318,21 @@ export default async function ProjectDetailPage({ params }) {
             {mockupGroups.map((group, index) => (
               <figure
                 key={`${group.title}-${index}`}
-                className={`group flex min-w-0 flex-col border border-stone-800/80 bg-white/[0.03] p-5 shadow-2xl shadow-black/20 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-stone-600 hover:bg-white/[0.05] hover:shadow-black/40 sm:p-6 ${
+                className={`group flex min-w-0 flex-col border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/20 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.055] hover:shadow-black/40 sm:p-6 ${
                   group.type === "flow" ? "lg:col-span-2" : ""
                 }`}
               >
                 {group.type === "flow" ? (
                   <MockupFlow images={group.images} isPhoneProject={isPhoneProject} title={project.title} />
                 ) : (
-                  <div className="flex min-h-[20rem] min-w-0 items-center justify-center overflow-hidden border border-stone-800/60 bg-stone-950/30 px-5 py-10 shadow-inner shadow-black/30">
+                  <div className="flex min-h-[20rem] min-w-0 items-center justify-center overflow-hidden border border-white/10 bg-black/20 px-5 py-10 shadow-inner shadow-black/30">
                     <Mockup imageUrl={group.imageUrl} title={`${project.title} ${index + 1}`} />
                   </div>
                 )}
 
-                <figcaption className="mt-6 flex flex-1 flex-col justify-between gap-8 border-t border-stone-800/80 pt-6">
+                <figcaption className="mt-6 flex flex-1 flex-col justify-between gap-8 border-t border-white/10 pt-6">
                   <div className="space-y-5">
-                    <p className="text-xs uppercase tracking-[0.32em] text-stone-500">
+                    <p className="text-xs uppercase tracking-[0.32em] text-stone-300">
                       View {formatViewNumber(index)}
                     </p>
                     <h3 className="font-[family-name:var(--font-display)] text-3xl leading-tight text-stone-100 sm:text-4xl">
@@ -340,7 +340,7 @@ export default async function ProjectDetailPage({ params }) {
                     </h3>
                   </div>
                   <div className="space-y-4">
-                    <div className="h-px w-full bg-stone-800/80" />
+                    <div className="h-px w-full bg-black/15" />
                     <p className="min-h-[5.25rem] text-sm leading-7 text-stone-400">
                       {group.caption}
                     </p>
@@ -356,7 +356,7 @@ export default async function ProjectDetailPage({ params }) {
         <Link href="/work" className="text-sm uppercase tracking-[0.28em] text-stone-400 transition hover:-translate-x-1 hover:text-white">
           Back to project
         </Link>
-        <Link href="/contact" className="border border-stone-200 px-7 py-4 text-sm uppercase tracking-[0.24em] transition hover:-translate-y-0.5 hover:bg-stone-100 hover:text-stone-950">
+        <Link href="/contact" className="border border-black px-7 py-4 text-sm uppercase tracking-[0.24em] transition hover:-translate-y-0.5 hover:bg-stone-100 hover:text-stone-950">
           Contact
         </Link>
       </section>

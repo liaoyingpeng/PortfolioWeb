@@ -1,57 +1,73 @@
 import Link from "next/link";
 import SiteShell from "./components/SiteShell";
-import { projects } from "./lib/content";
+
+const directions = [
+  ["01", "UI/UX", "從使用情境整理介面層級與操作節奏。"],
+  ["02", "Frontend", "以清楚的前端結構實作設計細節。"],
+  ["03", "Interaction", "用克制的動態建立探索感與回饋。"]
+];
 
 export default function Home() {
-  const featuredProject = projects[0];
-
   return (
     <SiteShell>
-      <section className="reveal grid flex-1 items-end gap-16 border-b border-stone-800/80 py-20 lg:grid-cols-[1.35fr_0.65fr] lg:py-32">
-        <div className="space-y-10">
-          <p className="max-w-sm text-xs uppercase tracking-[0.42em] text-stone-500">
-            Minimal portfolio for designers, creators, and independent studios
-          </p>
-          <div className="space-y-8">
-            <h1 className="max-w-4xl font-[family-name:var(--font-display)] text-5xl leading-none sm:text-7xl lg:text-[6.5rem]">
-              Calm visuals. Precise stories. Focused work.
-            </h1>
-            <p className="max-w-2xl text-base leading-8 text-stone-300 sm:text-xl">
-              我是一位重視節奏、留白與敘事的創作者，專注於數位作品集、品牌網站與具質感的視覺呈現。
-            </p>
+      <section className="relative min-h-[calc(100dvh-5.5rem)] pb-16 pt-20 sm:pt-24 lg:pb-24 lg:pt-28">
+        <div className="pointer-events-none absolute right-[-8rem] top-28 hidden h-[34rem] w-[34rem] rounded-full border border-white/[0.055] lg:block" />
+        <div className="pointer-events-none absolute left-[-5rem] top-40 hidden h-72 w-72 rounded-[4rem] border border-white/[0.045] lg:block" />
+
+        <div className="grid min-h-[calc(100dvh-13rem)] gap-14 lg:grid-cols-[0.62fr_0.38fr] lg:items-center">
+          <div className="reveal space-y-11">
+            <div className="flex items-center gap-4 text-xs uppercase tracking-[0.28em] text-stone-300">
+              <span className="h-px w-12 bg-white/20" />
+              UI/UX + Frontend + Interaction
+            </div>
+
+            <div className="space-y-7">
+              <h1 className="hero-title-3d max-w-5xl font-[family-name:var(--font-display)] text-[4.1rem] font-black leading-[0.84] sm:text-[6.8rem] lg:text-[9.5rem]">
+                <span>DIGITAL</span>
+                <span>WORKS</span>
+              </h1>
+              <p className="max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
+                深色、圓潤、帶一點 3D 氣氛的作品集首頁。聚焦 UI/UX、前端實作與互動展示，讓每個案例像一張可探索的作品提案。
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/work"
+                className="inline-flex min-h-12 items-center rounded-full border border-white/70 bg-stone-100 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-[#15151b] shadow-[0_12px_0_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.8)]"
+              >
+                View Project
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex min-h-12 items-center rounded-full border border-white/14 bg-[#1f1f27] px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-stone-200 shadow-[0_12px_28px_rgba(0,0,0,0.26),inset_0_1px_0_rgba(255,255,255,0.08)]"
+              >
+                About
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
+
+          <aside className="reveal reveal-delay rounded-[2.25rem] border border-white/10 bg-[#1f1f27]/88 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.36),inset_0_1px_0_rgba(255,255,255,0.07)] sm:p-8">
+            <div className="grid gap-0">
+              {directions.map(([number, title, body]) => (
+                <div key={title} className="grid gap-5 border-b border-white/10 py-6 first:pt-0 last:border-b-0 sm:grid-cols-[4rem_1fr]">
+                  <p className="font-[family-name:var(--font-display)] text-4xl font-black text-stone-700">{number}</p>
+                  <div className="space-y-3">
+                    <h2 className="text-sm uppercase tracking-[0.22em] text-stone-100">{title}</h2>
+                    <p className="text-sm leading-7 text-stone-300">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             <Link
               href="/work"
-              className="inline-flex items-center border border-stone-200 px-7 py-4 text-sm uppercase tracking-[0.24em] transition hover:-translate-y-0.5 hover:bg-stone-100 hover:text-stone-950"
+              className="mt-8 flex min-h-12 items-center justify-between rounded-full border border-white/12 bg-black/20 px-5 text-sm uppercase tracking-[0.18em] text-stone-300"
             >
-              View project
+              <span>Enter case archive</span>
+              <span aria-hidden="true">→</span>
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center border border-stone-700 px-7 py-4 text-sm uppercase tracking-[0.24em] text-stone-300 transition hover:-translate-y-0.5 hover:border-stone-300 hover:text-white"
-            >
-              Contact
-            </Link>
-          </div>
+          </aside>
         </div>
-
-        <aside className="reveal reveal-delay space-y-8 lg:justify-self-end">
-          <div className="border border-stone-800/80 bg-white/[0.045] p-8 shadow-2xl shadow-black/30 backdrop-blur-xl">
-            <p className="text-xs uppercase tracking-[0.32em] text-stone-500">Currently</p>
-            <p className="mt-4 max-w-xs font-[family-name:var(--font-display)] text-2xl leading-tight">
-              Building minimalist digital experiences with a refined editorial tone.
-            </p>
-          </div>
-          <Link
-            href="/about"
-            className="block border border-stone-800 bg-stone-100 p-8 text-stone-950 shadow-2xl shadow-black/35 transition hover:-translate-y-1 hover:bg-white"
-          >
-            <p className="text-xs uppercase tracking-[0.32em] text-stone-500">Featured</p>
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl">{featuredProject.title}</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-700">{featuredProject.description}</p>
-          </Link>
-        </aside>
       </section>
     </SiteShell>
   );

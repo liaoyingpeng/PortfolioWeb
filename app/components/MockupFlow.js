@@ -9,7 +9,7 @@ export default function MockupFlow({ images, isPhoneProject = false, title }) {
   const Mockup = isPhoneProject ? PhoneMockup : LaptopMockup;
 
   return (
-    <div className="overflow-hidden border border-stone-800/60 bg-stone-950/30 p-5 shadow-inner shadow-black/30">
+    <div className="overflow-hidden border border-white/10 bg-black/20 p-5 shadow-inner shadow-black/25">
       <div className="flex min-w-0 flex-col gap-5 md:flex-row md:items-stretch">
         {images.map((imageUrl, imageIndex) => {
           const isActive = imageIndex === activeIndex;
@@ -19,13 +19,13 @@ export default function MockupFlow({ images, isPhoneProject = false, title }) {
               key={imageUrl}
               type="button"
               onClick={() => setActiveIndex(imageIndex)}
-              className={`group/mockup min-w-0 border border-stone-800/80 bg-black/10 p-4 text-left transition duration-500 hover:border-stone-600 hover:bg-white/[0.035] focus:outline-none focus-visible:border-stone-300 md:p-5 ${
+              className={`group/mockup min-w-0 border border-white/10 bg-white/[0.035] p-4 text-left transition duration-500 hover:border-white/45 hover:bg-white/[0.055] focus:outline-none focus-visible:border-black md:p-5 ${
                 isActive ? "md:flex-[1.65]" : "md:flex-[0.78] md:opacity-70 hover:md:opacity-100"
               }`}
               aria-pressed={isActive}
             >
-              <div className="flex items-center justify-between border-b border-stone-800/80 pb-3">
-                <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <p className="text-xs uppercase tracking-[0.26em] text-stone-300">
                   {imageIndex === 0 ? "Before" : "After"}
                 </p>
                 <p className="text-xs uppercase tracking-[0.18em] text-stone-600">
