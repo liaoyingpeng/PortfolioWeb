@@ -92,7 +92,7 @@ export const services = [
 
 export const highlights = [
   {
-    title: "資訊傳播學系排球隊隊長",
+    title: "資訊傳播學系 系排隊長",
     meta: "資訊傳播學系系排",
     date: "2024 - 2025",
     description:
@@ -115,7 +115,7 @@ export const highlights = [
   {
     title: "育秀盃創意競賽｜工業設計類",
     meta: "使用者介面設計作品《陪伴雲》",
-    date: "2025",
+    date: "2026",
     description:
       "負責使用者研究、介面規劃與原型設計，以高齡照護為主題提出智慧醫療服務概念，作品入圍育秀盃複賽。"
   }

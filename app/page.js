@@ -26,9 +26,6 @@ export default function Home() {
                 <span>DIGITAL</span>
                 <span>WORKS</span>
               </h1>
-              <p className="max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
-                深色、圓潤、帶一點 3D 氣氛的作品集首頁。聚焦 UI/UX、前端實作與互動展示，讓每個案例像一張可探索的作品提案。
-              </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
@@ -51,7 +48,7 @@ export default function Home() {
             <div className="grid gap-0">
               {directions.map(([number, title, body]) => (
                 <div key={title} className="grid gap-5 border-b border-white/10 py-6 first:pt-0 last:border-b-0 sm:grid-cols-[4rem_1fr]">
-                  <p className="font-[family-name:var(--font-display)] text-4xl font-black text-stone-700">{number}</p>
+                    <p className="font-[family-name:var(--font-display)] text-4xl font-black text-stone-300">{number}</p>
                   <div className="space-y-3">
                     <h2 className="text-sm uppercase tracking-[0.22em] text-stone-100">{title}</h2>
                     <p className="text-sm leading-7 text-stone-300">{body}</p>

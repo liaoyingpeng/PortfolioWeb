@@ -8,7 +8,7 @@
   --ink-muted: #a8a29e;
   --line-soft: rgba(245, 245, 240, 0.12);
   --paper-soft: #1f1f27;
-  --font-display: "Arial Rounded MT Bold", "Avenir Next", "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-display: "Arial Rounded MT Bold", "Avenir Next", "Helvetica Neue", "Yuanti TC", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", sans-serif;
   --font-body: var(--font-display);
 }
 
@@ -79,7 +79,7 @@ a {
 }
 
 .about-title-font {
-  font-family: "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", "Arial Rounded MT Bold", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: var(--font-display);
 }
 
 @keyframes fade-up {

@@ -1,92 +1,132 @@
-import PageIntro from "../components/PageIntro";
 import SiteShell from "../components/SiteShell";
-import { education, highlights, services } from "../lib/content";
+import { education, highlights } from "../lib/content";
 
 export const metadata = {
   title: "About | LYP"
 };
 
+const skills = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+  },
+  {
+    title: "Design",
+    items: ["Figma", "UI Design", "Wireframe", "Prototype"]
+  },
+  {
+    title: "Interactive",
+    items: ["Unity", "TouchDesigner"]
+  }
+];
+
 export default function AboutPage() {
   return (
     <SiteShell>
-      <PageIntro
-        eyebrow="About"
-        title="我是廖盈芃，專注於 UI/UX、前端開發與互動體驗設計。"
-        titleClassName="about-title-font"
-        body="目前就讀元智大學資訊傳播學系科技組，擅長從生活情境與使用者需求出發，將想法轉化為清晰、易用且具良好體驗的數位產品，並透過設計與程式實現完整的互動體驗。"
-      />
-
-      <section className="grid gap-14 py-20 lg:grid-cols-[0.75fr_1.25fr] lg:py-28">
-        <div className="space-y-6 text-base leading-8 text-stone-300">
-          <p>
-            我的作品涵蓋電商平台、二手交易系統、個人品牌網站與智慧照護服務，從使用者需求分析、
-            介面規劃到前端開發，持續探索設計與技術之間的平衡。
-          </p>
-          <p>
-            在設計與實作過程中，我重視資訊架構、操作流程與視覺一致性，希望讓使用者能夠自然理解內容、
-            順暢完成操作，並感受到作品背後的價值與理念。
-          </p>
-          <p>
-            主要使用 HTML、CSS、JavaScript、PHP 與 MySQL 進行網站開發，並透過 Figma 完成介面設計、
-            原型規劃與使用者體驗設計。
-          </p>
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Education</p>
-            <p className="mt-3 text-stone-100">{education.school}</p>
-            <p>{education.department}</p>
-          </div>
-        </div>
-
-        <div className="grid gap-0 overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.025] sm:grid-cols-2">
-          {services.map((service) => (
-            <div key={service.title} className="border-b border-white/10 p-7 last:border-b-0 sm:border-r sm:last:border-b sm:even:border-r-0 sm:[&:nth-last-child(-n+2)]:border-b-0">
-              <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Capability</p>
-              <p className="mt-4 font-[family-name:var(--font-display)] text-2xl leading-tight text-stone-100">
-                {service.title}
-              </p>
-              <p className="mt-4 text-sm leading-7 text-stone-400">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 py-20 lg:py-28">
-        <div className="mb-12 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-          <p className="text-xs uppercase tracking-[0.42em] text-stone-300">Experience</p>
-          <div className="space-y-5">
-            <h2 className="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-[0.04em] text-stone-100 sm:text-5xl">
-              Highlights shaped by design, collaboration, and continuous learning.
-            </h2>
-            <p className="max-w-3xl text-base leading-8 text-stone-400">
-              從團隊領導、設計競賽到海外交流，這些經歷持續培養我的溝通能力、設計思維與跨文化視野。
+      <section className="reveal grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[0.78fr_1.22fr] lg:py-28">
+        <div className="space-y-5">
+          <p className="text-xs uppercase tracking-[0.34em] text-stone-300">About</p>
+          <div className="space-y-3">
+            <h1 className="font-[family-name:var(--font-display)] text-5xl font-black leading-[0.9] text-stone-100 sm:text-7xl">
+              廖盈芃
+            </h1>
+            <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-stone-400 sm:text-4xl">
+              Ying-Peng Liao
             </p>
           </div>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="max-w-3xl space-y-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-300">
+            Frontend Developer / UI/UX Designer
+          </p>
+          <p className="text-xl leading-9 text-stone-200 sm:text-2xl sm:leading-10">
+            目前就讀於元智大學資訊傳播學系，專注於網頁前端開發、介面設計與互動體驗設計。
+          </p>
+          <p className="max-w-2xl text-base leading-8 text-stone-400">
+            我喜歡從使用情境出發，整理資訊層級、操作流程與視覺節奏，再透過前端實作把概念轉成可以被瀏覽、操作與感受的數位作品。
+          </p>
+        </div>
+      </section>
+
+      <section className="grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[0.35fr_1fr] lg:py-24">
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Skills</p>
+          <h2 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-stone-100">
+            Tools for building digital experiences.
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {skills.map((group) => (
+            <section key={group.title} className="border-t border-white/10 pt-6">
+              <h3 className="font-[family-name:var(--font-display)] text-3xl text-stone-100">
+                {group.title}
+              </h3>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="bg-black/20 px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-300">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[0.35fr_1fr] lg:py-24">
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Education</p>
+          <h2 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-stone-100">
+            Academic background.
+          </h2>
+        </div>
+
+        <div className="border-t border-white/10 pt-6">
+          <p className="font-[family-name:var(--font-display)] text-4xl leading-tight text-stone-100">
+            {education.school}
+          </p>
+          <p className="mt-4 text-base leading-8 text-stone-300">
+            {education.department}
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 py-20 lg:py-28">
+        <div className="mb-12 grid gap-6 lg:grid-cols-[0.35fr_1fr]">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Experience</p>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-stone-100">
+              Selected milestones.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-base leading-8 text-stone-400">
+            這些經歷來自團隊協作、設計競賽與海外交流，持續累積我在溝通、觀察與專案推進上的能力。
+          </p>
+        </div>
+
+        <div className="relative space-y-0 border-l border-white/10 pl-6 sm:pl-9">
           {highlights.map((item) => (
-            <article
-              key={item.title}
-              className="grid gap-5 border-b border-white/10 py-8 sm:grid-cols-[10rem_1fr] lg:grid-cols-[12rem_1fr]"
-            >
-              <p className="text-xs uppercase tracking-[0.22em] text-stone-400">
+            <article key={item.title} className="relative border-b border-white/10 py-8 first:pt-0 last:border-b-0">
+              <span className="absolute -left-[1.95rem] top-9 h-3 w-3 rounded-full border border-white/35 bg-[#15151b] sm:-left-[2.35rem]" />
+              <p className="text-xs uppercase tracking-[0.24em] text-stone-400">
                 {item.date}
               </p>
-              <div className="space-y-4">
-                <p className="text-[0.68rem] uppercase tracking-[0.28em] text-stone-500">
-                  {item.meta}
-                </p>
-                <h3 className="font-[family-name:var(--font-display)] text-2xl leading-tight text-stone-100 sm:text-3xl">
-                  {item.title}
-                </h3>
-                <p className="max-w-3xl text-sm leading-7 text-stone-400">
-                  {item.description}
-                </p>
-              </div>
+              <h3 className="mt-4 font-[family-name:var(--font-display)] text-3xl leading-tight text-stone-100">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm uppercase tracking-[0.18em] text-stone-300">
+                {item.meta}
+              </p>
+              <p className="mt-5 max-w-3xl text-sm leading-7 text-stone-400">
+                {item.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
+
     </SiteShell>
   );
 }

@@ -7,35 +7,33 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const email = contacts.find((contact) => contact.label === "Email");
+
   return (
     <SiteShell>
       <PageIntro
         eyebrow="Contact"
-        title="有合作想法、專案邀約，或只是想打聲招呼，都可以直接聯絡我。"
-        body="For selected freelance collaborations, identity sites, portfolio systems, and focused creative development."
+        title="有合作機會、實習邀約，或只是想交流設計與開發，都歡迎與我聯繫。"
       />
 
-      <section className="grid gap-14 py-20 lg:grid-cols-[1fr_0.9fr] lg:py-28">
-        <div className="border border-white/10 bg-white/[0.035] p-8 shadow-2xl shadow-black/25">
-          <p className="text-xs uppercase tracking-[0.32em] text-stone-300">Availability</p>
-          <p className="mt-6 max-w-lg font-[family-name:var(--font-display)] text-4xl leading-tight">
-            Open to compact projects with a clear visual direction and thoughtful pacing.
+      <section className="grid gap-10 py-20 lg:grid-cols-[0.35fr_1fr] lg:py-28">
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.38em] text-stone-300">Contact</p>
+          <p className="max-w-sm text-base leading-8 text-stone-400">
+            前端開發、UI/UX 設計、實習與作品交流相關，都可以透過 Email 聯繫我。
           </p>
         </div>
 
-        <div className="space-y-4">
-          {contacts.map((contact) => (
+        <div>
+          {email ? (
             <a
-              key={contact.label}
-              href={contact.href}
-              className="flex items-center justify-between gap-6 border-b border-white/10 py-6 text-sm transition hover:-translate-y-0.5 hover:border-black hover:text-white"
-              target={contact.href.startsWith("http") ? "_blank" : undefined}
-              rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+              href={email.href}
+              className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 py-6 text-sm transition hover:-translate-y-0.5 hover:border-white/35 hover:text-white"
             >
-              <span className="uppercase tracking-[0.28em] text-stone-300">{contact.label}</span>
-              <span className="text-right text-base">{contact.value}</span>
+              <span className="uppercase tracking-[0.28em] text-stone-300">EMAIL</span>
+              <span className="text-right text-base text-stone-100">{email.value}</span>
             </a>
-          ))}
+          ) : null}
         </div>
       </section>
     </SiteShell>

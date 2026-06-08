@@ -217,19 +217,19 @@ export default async function ProjectDetailPage({ params }) {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
+          <div className="border-t border-white/10 py-6">
             <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Title</p>
             <p className="mt-3 text-stone-100">{project.title}</p>
           </div>
-          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur">
+          <div className="border-t border-white/10 py-6">
             <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Category</p>
             <p className="mt-3 text-stone-100">{project.category}</p>
           </div>
-          <div className="border border-white/10 bg-white/[0.035] p-6 shadow-xl shadow-black/15 backdrop-blur sm:col-span-2">
+          <div className="border-t border-white/10 py-6 sm:col-span-2">
             <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Technology</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.tech_stack.map((item) => (
-                <span key={item} className="border border-white/20 bg-black/20 px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                <span key={item} className="bg-black/20 px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-300">
                   {item}
                 </span>
               ))}
@@ -285,7 +285,7 @@ export default async function ProjectDetailPage({ params }) {
             {detailContent.highlights.map((highlight, index) => (
               <article
                 key={highlight.title}
-                className="group border border-white/10 bg-white/[0.035] p-7 shadow-xl shadow-black/15 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.055] hover:shadow-black/35"
+                className="border-t border-white/10 py-7"
               >
                 <p className="font-[family-name:var(--font-display)] text-4xl text-stone-700">
                   {formatViewNumber(index)}
@@ -293,7 +293,7 @@ export default async function ProjectDetailPage({ params }) {
                 <h3 className="mt-6 font-[family-name:var(--font-display)] text-3xl leading-tight text-stone-100">
                   {highlight.title}
                 </h3>
-                <p className="mt-5 text-sm leading-7 text-stone-400 transition group-hover:text-stone-300">
+                <p className="mt-5 text-sm leading-7 text-stone-400">
                   {highlight.description}
                 </p>
               </article>
@@ -318,14 +318,14 @@ export default async function ProjectDetailPage({ params }) {
             {mockupGroups.map((group, index) => (
               <figure
                 key={`${group.title}-${index}`}
-                className={`group flex min-w-0 flex-col border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/20 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.055] hover:shadow-black/40 sm:p-6 ${
+                className={`flex min-w-0 flex-col border-t border-white/10 py-6 ${
                   group.type === "flow" ? "lg:col-span-2" : ""
                 }`}
               >
                 {group.type === "flow" ? (
                   <MockupFlow images={group.images} isPhoneProject={isPhoneProject} title={project.title} />
                 ) : (
-                  <div className="flex min-h-[20rem] min-w-0 items-center justify-center overflow-hidden border border-white/10 bg-black/20 px-5 py-10 shadow-inner shadow-black/30">
+                  <div className="flex min-h-[20rem] min-w-0 items-center justify-center overflow-hidden bg-black/20 px-5 py-10">
                     <Mockup imageUrl={group.imageUrl} title={`${project.title} ${index + 1}`} />
                   </div>
                 )}
